@@ -16,9 +16,9 @@ const section = document.querySelector('section');
         // STEP 8: Output the iScream JSON object to the console
     console.log(iScream);
         // STEP 9a: Invoke the populateHeader function here, then build it below
-    populateHeader(iScream)
+    populateHeader(iScream);
         // STEP 10a: Invoke the showTopFlavors function here, then build it below
-
+    showTopFlavors(iScream);
     }
 
 // STEP 3b: Call the populate() function
@@ -34,13 +34,16 @@ function populateHeader(jsonObj) {
         header.appendChild(header1);
 };
 /* STEP 10b: Assemble the showTopFlavors() function */
-function showTopFlavors() {
+function showTopFlavors(jsonObj) {
     // STEP 10c: Attache the JSON topFlavors object to a variable
-    //let topFlavors = jsonObj.topFlavors;
+    let topFlavors = jsonObj.topFlavors;
     // STEP 10d: Loop through the topFlavors object
     for (let i = 0; i < topFlavors.length; i ++) {
         // STEP 10e: build HTML elements for the content
-        
+        let article = document.createElement('article');
+        let h2 = document.createElement('h2');
+        let image = document.createElement('img');
+        let ul = document.createElement('ul');
 
         // STEP 10f: Set the textContent property for each of the above elements (except the UL), based on the JSON content
         
