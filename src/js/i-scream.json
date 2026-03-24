@@ -25,6 +25,28 @@
         "clover honey"
       ],
       "image" : "peach-mango.svg"
+    },
+    {
+      "name" : "Cookie Dough",
+      "calories" : 250,
+      "type" : "ice cream",
+      "ingredients" : [
+        "vanilla cream",
+        "cookie dough chunks",
+        "chocolate chips"
+      ],
+      "image" : "ice-cream-xtra2.svg"
+    },
+    {
+      "name" : "Fruity Pebbles",
+      "calories" : 200,
+      "type" : "ice cream",
+      "ingredients" : [
+        "vanilla cream",
+        "fruity pebbles",
+        "orange juice"
+      ],
+      "image" : "ice-cream-xtra1.svg"
     }
   ]
 }
