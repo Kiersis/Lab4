@@ -45,9 +45,44 @@ function showTopFlavors(jsonObj) {
         let image = document.createElement('img');
         let ul = document.createElement('ul');
 
+        let emoji = '';
+        switch (topFlavors[i]['type']) {
+            case 'ice cream':
+                emoji = '🍦';
+                break;
+            case 'sorbet':
+                emoji = '🍧';
+                break;
+            default:
+                emoji = '';
+        }
+
         // STEP 10f: Set the textContent property for each of the above elements (except the UL), based on the JSON content
-        h2.textContent = topFlavors[i]['name'];
+        h2.textContent = topFlavors[i]['name'] + ' ' + emoji;
         image.setAttribute('src', 'https://raw.githubusercontent.com/Kiersis/Lab4/refs/heads/master/src/images/' + topFlavors[i]['image']);
+
+        let calories = topFlavors[i]['calories'];
+        let calEmoji = '';
+        let calMessage = '';
+
+        switch (true) {
+            case calories <= 200:
+                calEmoji = ' 🟢';
+                calMessage = 'Low calories';
+                break;
+            case calories >= 200 && calories < 400:
+                calEmoji = ' 🟡';
+                calMessage = 'Moderate calories';
+                break;
+            case calories >= 400:
+                calEmoji = ' 🔴';
+                calMessage = 'High calories';
+                break;
+            default:
+                break;
+        }
+        let calInfo = document.createElement('p');
+        calInfo.textContent = 'Calories: ' + calories + calEmoji + ' (' + calMessage + ')';
 
         // STEP 10g: Build a loop for the ingredients array in the JSON
         let ingredients = topFlavors[i]['ingredients'];
@@ -62,6 +97,7 @@ function showTopFlavors(jsonObj) {
         article.appendChild(h2);
         article.appendChild(image);
         article.appendChild(ul);
+        article.appendChild(calInfo);
         // STEP 10i: Append each complete ARTICLE element to the SECTION element
         section.appendChild(article);
     };
