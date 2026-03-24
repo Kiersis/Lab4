@@ -89,7 +89,7 @@ function showTopFlavors(jsonObj) {
         for (let j = 0; j < ingredients.length; j++) {
         
             // add the ingredient to the UL
-            let listItem = document.createElement('listItem');
+            let listItem = document.createElement('li');
             listItem.textContent = ingredients[j];
             ul.appendChild(listItem);
         }
