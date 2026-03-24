@@ -12,7 +12,7 @@ const section = document.querySelector('section');
         // STEP 6: Make a network request with the fetch() function, which returns a Response object
     const response = await fetch(request);
         // STEP 7: Capture the returned Response object and covert to a JSON object using json()
-    const iScream = response.json();
+    const iScream = await response.json();
         // STEP 8: Output the iScream JSON object to the console
     console.log(iScream);
         // STEP 9a: Invoke the populateHeader function here, then build it below
@@ -54,9 +54,9 @@ function showTopFlavors(jsonObj) {
         for (let j = 0; j < ingredients.length; j++) {
         
             // add the ingredient to the UL
-            let listItem = document.createElement('li');
+            let listItem = document.createElement('listItem');
             listItem.textContent = ingredients[j];
-            ul.appendChild(li);
+            ul.appendChild(listItem);
         }
         // STEP 10h: Append each of the above HTML elements to the ARTICLE element
         article.appendChild(h2);
