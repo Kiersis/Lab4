@@ -59,7 +59,7 @@ function showTopFlavors(jsonObj) {
 
         // STEP 10f: Set the textContent property for each of the above elements (except the UL), based on the JSON content
         h2.textContent = topFlavors[i]['name'] + ' ' + emoji;
-        image.setAttribute('src', 'https://raw.githubusercontent.com/Kiersis/Lab4/refs/heads/master/src/images/' + topFlavors[i]['image']);
+        image.setAttribute('src', 'images/' + topFlavors[i]['image']);
 
         let calories = topFlavors[i]['calories'];
         let calEmoji = '';
